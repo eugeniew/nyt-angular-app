@@ -1,0 +1,6 @@
+<div>
+  <h4>{{atcl.title}}</h4>
+  <img class='img-responsive img-thumbnail article-img' ng-show="{{!atcl.multimedia.length==0}}" ng-src="{{atcl.multimedia[1].url}}" style="width:100%; margin-bottom: 15px;"/>
+  <p>{{atcl.abstract}}</p>
+  <a class='article-link' ng-href="https://duckduckgo.com/?q={{atcl.url}}" target='blank'>Read More</a>
+</div>

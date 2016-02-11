@@ -1,0 +1,28 @@
+<div class="searchField">
+  <div class="row">
+    <div class="col-md-4">
+      <input class="thumbnail" type="text" name="name" ng-model="query" placeholder="Enter Query Here..."/>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-6" style="padding-top:7px;">
+      <span>From:</span><input style="width:75%;" type="date" class="dateFrom" value="" ng-model="dateFrom"/>
+    </div>
+    <div class="col-md-2 col-sm-6 col-xs-6" style="padding-top:7px;">
+      <span>To:</span><input style="width:75%;" type="date" name="dateTo" value="" ng-model="dateTo"/>
+    </div>
+    <div class="col-md-1 col-sm-6 col-xs-6">
+      <select ng-model="sortOldNew">
+        <option value="oldest">Oldest</option>
+        <option value="newest">Newest</option>
+      </select>
+    </div>
+    <div class="col-md-2 col-sm-6 col-xs-6">
+      <button type="button" class="btn btn-default" ng-click="updateContent()">Search</button>
+    </div>
+  </div>
+</div>
+<div class="contentHolder">
+  <div class="oldArticle" ng-repeat="qr in queryResult">
+    <search-result/>
+  </div>
+  <button type="button" ng-show="queryResult" style="margin-right: 15px;"class="btn btn-default" ng-click="prevPage(); updateContent()">Previous Page</button><button ng-show="queryResult" type="button" class="btn btn-default" ng-click="nextPage(); updateContent()">Next Page</button>
+</div>

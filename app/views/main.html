@@ -1,0 +1,33 @@
+<div class="sectionArray" ng-init="updateContent('home')">
+  <ul>
+    <ul class="listMenu">
+      <li ng-click="updateContent('home')" class="activeElement">Home</li>
+      <li ng-click="updateContent('world')">World</li>
+      <li ng-click="updateContent('national')">National</li>
+      <li ng-click="updateContent('politics')">Politics</li>
+      <li ng-click="updateContent('business')">Business</li>
+      <li ng-click="updateContent('opinion')">Opinion</li>
+      <li ng-click="updateContent('technology')">Technology</li>
+      <li ng-click="updateContent('science')">Science</li>
+      <li ng-click="updateContent('health')">Health</li>
+      <li ng-click="updateContent('sports')">Sports</li>
+      <li ng-click="updateContent('arts')">Arts</li>
+      <li ng-click="updateContent('fashion')">Fashion</li>
+      <li ng-click="updateContent('dining')">Dining</li>
+      <li ng-click="updateContent('travel')">Travel</li>
+      <li ng-click="updateContent('magazine')">Magazine</li>
+      <li ng-click="updateContent('realestate')">Realestate</li>
+    </ul>
+  </ul>
+</div>
+<div class="grid" class="row marketing" masonry>
+  <div class='grid-item masonry-brick' ng-class="{smallView:{{atcl.multimedia.length==0}}}" ng-repeat="atcl in articles">
+    <single-article />
+  </div>
+</div>
+<script type="text/javascript">
+  $('.listMenu li').on('click', function(){
+    $(this).removeClass('activeElement').addClass('activeElement');
+    $('.listMenu li').not($(this)).removeClass('activeElement');
+  });
+</script>
